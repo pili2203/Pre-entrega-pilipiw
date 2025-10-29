@@ -3,7 +3,6 @@ from selenium import webdriver
 
 def test_inventory(login_in_driver):
     try:
-
         driver = login_in_driver
 
         assert driver.title == "Swag Labs"

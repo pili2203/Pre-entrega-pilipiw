@@ -1,6 +1,7 @@
 import pytest
 from selenium import webdriver
-from utils import login
+from pages.login_pages import LoginPage
+
 
 @pytest.fixture
 def driver():
@@ -10,5 +11,5 @@ def driver():
 
 @pytest.fixture
 def login_in_driver(driver):
-    login(driver)
+    LoginPage(driver).abrir_pagina().login_completo("standard_user","secret_sauce")
     return driver
