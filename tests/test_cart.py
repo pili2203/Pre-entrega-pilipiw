@@ -3,6 +3,7 @@ from selenium import webdriver
 import pytest
 
 from pages.inventory_page import inventoryPage
+from pages.cart_page import CartPage
 
 @pytest.mark.parametrize("usuario,password",[("standard_user","secret_sauce")])
 def test_inventory(login_in_driver,usuario,password):

@@ -1,20 +1,23 @@
 from selenium.webdriver.common.by import By
 from selenium import webdriver
 import pytest 
-from utils.datos import leer_csv_login
+from faker import Faker
 from pages.login_pages import LoginPage
-from utils.logger import logger
+
+#inicializamos
+fake= Faker()
 
 
-@pytest.mark.parametrize("usuario,password,debe_funcionar",leer_csv_login("datos/data_login.csv"))
+@pytest.mark.parametrize("usuario,password,debe_funcionar",[
+    (fake.user_name(),fake.password(),False),
+    (fake.user_name(),fake.password(),False),
+    (fake.user_name(),fake.password(length=8,special_chars=True,upper_case=True,digits=True),False)
+])
 def test_login_validation(login_in_driver,usuario,password,debe_funcionar):
     driver = login_in_driver
-    
-
-    if debe_funcionar == True:
-        logger.info("Completando con los datos de usuario")
+    print(debe_funcionar)
+    if debe_funcionar == 'True':
         assert "/inventory.html" in driver.current_url, "No se redirgio al inventario"
-        logger.info("test de login completado")
     elif debe_funcionar == 'False':
         mensaje_error = LoginPage(driver).obtener_error()
         assert "Epic sadface" in mensaje_error, "el mensaje de error no se esta mostrando"
