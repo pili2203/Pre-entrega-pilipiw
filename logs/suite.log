@@ -1,7 +1,0 @@
-2025-11-28 17:30:11 INFO TalentoTech: Completando con los datos de usuario
-2025-11-28 17:30:11 INFO TalentoTech: test de login completado
-2025-11-28 17:36:44 INFO TalentoTech: Completando con los datos de usuario
-2025-11-28 17:36:57 INFO TalentoTech: Completando con los datos de usuario
-2025-11-28 17:37:51 INFO TalentoTech: Realizando la solicitud GET a https://reqres.in/api/users
-2025-11-28 17:37:52 INFO TalentoTech: Status code:200
-2025-11-28 17:37:52 INFO TalentoTech: Validando el id dentro del usuario

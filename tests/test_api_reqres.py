@@ -3,6 +3,7 @@ import pytest
 from utils.logger import logger
 
 #Obtener usuario
+@pytest.mark.skipif(reason="pide api key")
 def test_get_user(url_base,header_request):
     logger.info(f"Realizando la solicitud GET a {url_base}")
     response = requests.get(f"{url_base}/2", headers=header_request)
@@ -15,6 +16,7 @@ def test_get_user(url_base,header_request):
     assert data ["data"]["id"] == 2
 
 #Crear usuario 
+@pytest.mark.skipif(reason="pide api key")
 def test_create_user (url_base, header_request):
     payload={
         "name": "Andrea",
@@ -29,6 +31,7 @@ def test_create_user (url_base, header_request):
     assert data["name"] == payload["name"]
 
 # Eliminar usuario
+@pytest.mark.skipif(reason="pide api key")
 def test_delete_user(url_base,header_request):
     response = requests.delete(f"{url_base}/2",headers=header_request)
 
