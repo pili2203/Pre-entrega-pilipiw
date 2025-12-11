@@ -1,9 +1,9 @@
 name: CI TalentoTech
 on:
   push:
-    branches: [name,develop]
+    branches: [main,develop]
   pull_request:
-    branches: [name,develop]
+    branches: [main,develop]
 jobs:
   test:
     runs-on: ubuntu-latest
