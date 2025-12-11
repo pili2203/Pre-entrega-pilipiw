@@ -31,7 +31,7 @@ jobs:
       
       #4 Instalar dependencias
       - name: Intalar dependencias
-        run: pip install -r requirements.text
+        run: pip install -r requirements.txt
 
       #5 Ejecutar Test
       - name: Run test
