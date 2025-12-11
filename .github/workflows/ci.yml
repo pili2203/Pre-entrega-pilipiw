@@ -21,7 +21,7 @@ jobs:
         uses: actions/cache@4
         with:
           path: ${{env.PIP_CACHE}}
-          key: ${{runner.os}}-pip-${{ hashFiles"'**requirements.text'}}
+          key: ${{runner.os}}-pip-${{ hashFiles('**requirements.text')}}
 
       # Setup de python
       - name: Instalar python ${{ env.PYTHON_VERSION}}
@@ -45,7 +45,6 @@ jobs:
           path: reports/
       - name: Subir Suite logs
         uses: actions/upload-artifact@v4
-        whit:
+        with:
           name: suite-log
           path: logs/
-          
