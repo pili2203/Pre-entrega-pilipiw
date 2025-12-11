@@ -42,7 +42,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: html-report
-          path: reports/
+          path: reportes/
       - name: Subir Suite logs
         uses: actions/upload-artifact@v4
         with:
