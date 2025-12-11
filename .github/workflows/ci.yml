@@ -20,8 +20,8 @@ jobs:
       - name: Cache dependencia 
         uses: actions/cache@4
         with:
-          path: ${{env.PIP_CACHE}}
-          key: ${{runner.os}}-pip-${{ hashFiles('**requirements.text')}}
+          path: ${{ env.PIP_CACHE }}
+          key: ${{ runner.os }}-pip-${{ hashFiles('**requirements.txt') }}
 
       # Setup de python
       - name: Instalar python ${{ env.PYTHON_VERSION}}
