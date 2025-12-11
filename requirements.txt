@@ -3,5 +3,3 @@ pytest-html
 selenium 
 faker
 requests
-webdriver-manager
-
